@@ -37,6 +37,8 @@ int main(int argc, char** argv){
 	ssize_t lineLength = 0;
 	int i;
 	for(i = 3; i < argc; i ++){
+		if(atoi(argv[i]) < 1 || atoi(argv[i]) > col)
+				usage(argv[0]);
 	        outputBuffer[i-3] = atoi(argv[i]);
 	}	       
 	
@@ -73,7 +75,7 @@ int main(int argc, char** argv){
 }
 
 void usage(char *name){
-	fprintf(stderr, "usage: %s [-c] [arg ...]\n", name);
+	fprintf(stderr, "usage: %s [-c] [col_size] [col# ...] 1 <= col <= colsize\n", name);
 	exit(EXIT_FAILURE);
 }
 
