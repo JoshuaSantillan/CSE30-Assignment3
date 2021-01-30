@@ -38,7 +38,6 @@ int main(int argc, char** argv){
 	int i;
 	for(i = 3; i < argc; i ++){
 	        outputBuffer[i-3] = atoi(argv[i]);
-	//	printf("%d\n", outputBuffer[i-3]);
 	}	       
 	
 	// populate inputBuffer
@@ -68,6 +67,8 @@ int main(int argc, char** argv){
 		}
 	}
 	free(line);
+	free(inputBuffer);
+	free(outputBuffer);
 	return 0;
 }
 
